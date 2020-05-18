@@ -1,0 +1,29 @@
+{
+	"name": "devorto/microsoft-teams-logger",
+	"description": "Logs errors/notices etc to Microsoft Teams using Psr/LoggerInterface.",
+	"license": "MIT",
+	"type": "library",
+	"authors": [
+		{
+			"name": "Devorto",
+			"email": "info@devorto.com",
+			"homepage": "https://www.devorto.com/",
+			"role": "Owner"
+		},
+		{
+			"name": "Geoffrey Dijkstra",
+			"email": "geoffrey@devorto.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"psr/log": "^1.1.0",
+		"ext-curl": "*",
+		"ext-json": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Devorto\\Logger\\": "src"
+		}
+	}
+}

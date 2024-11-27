@@ -1,3 +1,6 @@
+# WARNING: Deprecated!
+Sending message to MS Teams using their Webhook API is being deprecated by microsoft so setting up "new connectors" this way isn't possible anymore. We personally switched to sending emails to teams channel because their new implementation is a pita to implement, so hereby this package is not maintained anymore.
+
 # Microsoft Teams Logger
 Send errors/notices/warnings etc to Microsoft Teams,
 using this Class which implements the Prs/Log/LoggerInterface.

@@ -17,6 +17,7 @@
 		}
 	],
 	"require": {
+		"php": "^7.4.0 || ^8.0.0",
 		"psr/log": "^1.1.0",
 		"ext-curl": "*",
 		"ext-json": "*"
@@ -26,5 +27,5 @@
 			"Devorto\\Logger\\": "src"
 		}
 	},
-	"abandoned": true
+	"abandoned": false
 }

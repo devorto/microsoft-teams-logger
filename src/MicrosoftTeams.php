@@ -5,6 +5,7 @@ namespace Devorto\Logger;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
+use Stringable;
 use UnexpectedValueException;
 
 /**
@@ -17,17 +18,17 @@ class MicrosoftTeams implements LoggerInterface
     /**
      * @var string
      */
-    protected $webHookUrl;
+    protected string $webHookUrl;
 
     /**
      * @var string
      */
-    protected $applicationTitle;
+    protected string $applicationTitle;
 
     /**
      * @var string
      */
-    protected $applicationUrl;
+    protected string $applicationUrl;
 
     /**
      * Slack constructor.
@@ -92,12 +93,12 @@ class MicrosoftTeams implements LoggerInterface
     /**
      * System is unusable.
      *
-     * @param string $message
+     * @param string|Stringable $message
      * @param array $context
      *
      * @return void
      */
-    public function emergency($message, array $context = [])
+    public function emergency(string | Stringable $message, array $context = []): void
     {
         if (empty($context['theme_color'])) {
             $context['theme_color'] = 'FF0000';
@@ -116,7 +117,7 @@ class MicrosoftTeams implements LoggerInterface
      *
      * @return void
      */
-    public function alert($message, array $context = [])
+    public function alert(string | Stringable $message, array $context = []): void
     {
         if (empty($context['theme_color'])) {
             $context['theme_color'] = 'FF0000';
@@ -134,7 +135,7 @@ class MicrosoftTeams implements LoggerInterface
      *
      * @return void
      */
-    public function critical($message, array $context = [])
+    public function critical(string | Stringable $message, array $context = []): void
     {
         if (empty($context['theme_color'])) {
             $context['theme_color'] = 'FF0000';
@@ -147,12 +148,12 @@ class MicrosoftTeams implements LoggerInterface
      * Runtime errors that do not require immediate action but should typically
      * be logged and monitored.
      *
-     * @param string $message
+     * @param string|Stringable $message
      * @param array $context
      *
      * @return void
      */
-    public function error($message, array $context = [])
+    public function error(string | Stringable $message, array $context = []): void
     {
         if (empty($context['theme_color'])) {
             $context['theme_color'] = 'FF0000';
@@ -166,12 +167,12 @@ class MicrosoftTeams implements LoggerInterface
      * Example: Use of deprecated APIs, poor use of an API, undesirable things
      * that are not necessarily wrong.
      *
-     * @param string $message
+     * @param string|Stringable $message
      * @param array $context
      *
      * @return void
      */
-    public function warning($message, array $context = [])
+    public function warning(string | Stringable $message, array $context = []): void
     {
         if (empty($context['theme_color'])) {
             $context['theme_color'] = 'FFFF00';
@@ -183,12 +184,12 @@ class MicrosoftTeams implements LoggerInterface
     /**
      * Normal but significant events.
      *
-     * @param string $message
+     * @param string|Stringable $message
      * @param array $context
      *
      * @return void
      */
-    public function notice($message, array $context = [])
+    public function notice(string | Stringable $message, array $context = []): void
     {
         if (empty($context['theme_color'])) {
             $context['theme_color'] = '000080';
@@ -201,12 +202,12 @@ class MicrosoftTeams implements LoggerInterface
      * Interesting events.
      * Example: User logs in, SQL logs.
      *
-     * @param string $message
+     * @param string|Stringable $message
      * @param array $context
      *
      * @return void
      */
-    public function info($message, array $context = [])
+    public function info(string | Stringable $message, array $context = []): void
     {
         if (empty($context['theme_color'])) {
             $context['theme_color'] = '000080';
@@ -218,12 +219,12 @@ class MicrosoftTeams implements LoggerInterface
     /**
      * Detailed debug information.
      *
-     * @param string $message
+     * @param string|Stringable $message
      * @param array $context
      *
      * @return void
      */
-    public function debug($message, array $context = [])
+    public function debug(string | Stringable $message, array $context = []): void
     {
         if (empty($context['theme_color'])) {
             $context['theme_color'] = '000080';
@@ -236,12 +237,12 @@ class MicrosoftTeams implements LoggerInterface
      * Logs with an arbitrary level.
      *
      * @param mixed $level
-     * @param string $message
+     * @param string|Stringable $message
      * @param array $context
      *
      * @return void
      */
-    public function log($level, $message, array $context = [])
+    public function log($level, string | Stringable $message, array $context = []): void
     {
         switch ($level) {
             case LogLevel::EMERGENCY:

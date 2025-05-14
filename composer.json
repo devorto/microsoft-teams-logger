@@ -26,6 +26,5 @@
 		"psr-4": {
 			"Devorto\\Logger\\": "src"
 		}
-	},
-	"abandoned": false
+	}
 }
